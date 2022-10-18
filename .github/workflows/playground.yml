@@ -1,0 +1,13 @@
+name: Playground
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo ANSWER=42 >> $GITHUB_ENV
+      - run: echo ${{ env.ANSWER }}
+      - run: echo "$ANSWER"
